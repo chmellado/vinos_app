@@ -1,0 +1,32 @@
+<%= form_with(model: notum, local: true) do |form| %>
+  <% if notum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notum.errors.count, "error") %> prohibited this notum from being saved:</h2>
+
+      <ul>
+        <% notum.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :puntaje %>
+    <%= form.number_field :puntaje %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enologo_id %>
+    <%= form.text_field :enologo_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vino_id %>
+    <%= form.text_field :vino_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

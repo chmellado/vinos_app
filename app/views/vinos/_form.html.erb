@@ -1,0 +1,34 @@
+<%= form_with(model: vino, local: true) do |form| %>
+  <% if vino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vino.errors.count, "error") %> prohibited this vino from being saved:</h2>
+
+      <ul>
+        <% vino.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+
+  <div class="field"> 
+    <%= form.label :Cepa %> 
+    <%= form.collection_check_boxes(:cepa_ids, Cepa.all, :id, :name) do |b| %> 
+      <%= b.label class: 'label-checkbox' do %> 
+      <%= b.check_box + b.text %> 
+      <%= form.text_field "porcentaje[]" %>
+    <% end %> 
+  <% end %>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

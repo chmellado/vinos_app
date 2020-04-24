@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Puntaje:</strong>
+  <%= @notum.puntaje %>
+</p>
+
+<p>
+  <strong>Enologo:</strong>
+  <%= @notum.enologo_id %>
+</p>
+
+<p>
+  <strong>Vino:</strong>
+  <%= @notum.vino_id %>
+</p>
+
+<%= link_to 'Edit', edit_notum_path(@notum) %> |
+<%= link_to 'Back', nota_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Revista</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Enologos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @revista.each do |revistum| %>
+      <tr>
+        <td><%= revistum.name %></td>
+        <td><%= revistum.enologos_id %></td>
+        <td><%= link_to 'Show', revistum %></td>
+        <td><%= link_to 'Edit', edit_revistum_path(revistum) %></td>
+        <td><%= link_to 'Destroy', revistum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Revistum', new_revistum_path %>

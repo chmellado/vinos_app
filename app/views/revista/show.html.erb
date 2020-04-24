@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @revistum.name %>
+</p>
+
+<p>
+  <strong>Enologos:</strong>
+  <%= @revistum.enologos_id %>
+</p>
+
+<%= link_to 'Edit', edit_revistum_path(@revistum) %> |
+<%= link_to 'Back', revista_path %>
